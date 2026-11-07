@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 
 import {MobileProvider, ToasterComponent, ToasterProvider} from '@gravity-ui/uikit';
 
@@ -22,9 +22,12 @@ function Root() {
             <MobileProvider mobile={isMobile}>
                 <ToasterProvider toaster={toaster}>
                     <AuthProvider>
-                        <BrowserRouter>
+                        {/* HashRouter: GitHub Pages не умеет отдавать SPA по произвольному
+                            пути, из-за чего такие ссылки отвечали 404 и ломались при
+                            пересылке в мессенджерах. С хешем всегда отдаётся 200. */}
+                        <HashRouter>
                             <App />
-                        </BrowserRouter>
+                        </HashRouter>
                     </AuthProvider>
                     <ToasterComponent />
                 </ToasterProvider>
