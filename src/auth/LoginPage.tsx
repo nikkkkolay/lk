@@ -92,7 +92,7 @@ export function LoginPage() {
 
                 <div className="login__form">
                     <div className="login__form-header">
-                        <h2 className="login__form-title">Вход в кабинет кабинет</h2>
+                        <h2 className="login__form-title">Вход в личный кабинет</h2>
                         <Text variant="body-1" color="secondary">
                             Используйте учётную запись университета
                         </Text>
